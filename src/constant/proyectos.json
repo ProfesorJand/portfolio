@@ -1,0 +1,50 @@
+{
+  "repositorios": [
+    {
+      "id": "1",
+      "url": "https://github.com/ProfesorJand/Dogs-PI-Soy-Henry",
+      "avatar_url": "/images/dog.png",
+      "titulo": "Dogs Breeds",
+      "descripcion": "Proyecto Front-Back-End y Base de Datos de Raza de Perros"
+    },
+    {
+      "id": "2",
+      "url": "https://github.com/ProfesorJand/ProfesorJand",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100385965?v=4",
+      "titulo": "Github Presentation",
+      "descripcion": "Welcome to my Github Profile"
+    },
+    {
+      "id": "3",
+      "url": "https://github.com/ProfesorJand/ProfesorJand",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100385965?v=4",
+      "titulo": "Github Presentation",
+      "descripcion": "Welcome to my Github Profile"
+    }
+  ],
+  "organizaciones": [
+    {
+      "id": "1",
+      "url": "https://api.github.com/orgs/PT07G05-Henry",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115708837?v=4",
+      "titulo": "PT07G05-Henry",
+      "descripcion": "This organization was created for developing the eCommerce henry project"
+    },
+    {
+      "id": "2",
+      "url": "https://api.github.com/orgs/Eagle-Solutions-App",
+      "avatar_url": "https://avatars.githubusercontent.com/u/129209820?v=4",
+      "titulo": "Eagle-Solutions-App",
+      "descripcion": "This organization was created for developing an APP for a constructors company"
+    }
+  ],
+  "paginas": [
+    {
+      "id": "1",
+      "url": "https://guiadeparche.com",
+      "avatar_url": "/images/Guiadeparche.png",
+      "titulo": "Guiadeparche",
+      "descripcion": "Pagina web de Guias de Videojuegos especialmente en Teamfight Tactics de Riot Games"
+    }
+  ]
+}

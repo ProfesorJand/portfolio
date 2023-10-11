@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RepoCard from '../components/RepoCard.astro';
+import GitHubStats from '../components/GitHubStats.astro';
+// import repos from '../constant/repos.json';
+// import orgs from '../constant/orgs.json';
+import proyectos from '../constant/proyectos.json';
+import { getAllOrgs, getAllRepos } from '../constant/datos';
+const repos = proyectos.repositorios;
+const orgs = proyectos.organizaciones;
+const paginas = proyectos.paginas;
+//getAllOrgs();
+// await getAllRepos();
+---
+
+<script>
+  console.log(new Date().getDate(), new Date().getMonth());
+</script>
+
+<Layout title="Profesorjand Portfolio">
+  <div class="container">
+    <div class="github-repository-container">
+      <h2>Paginas Webs</h2>
+      <div class="container-repos">
+        {
+          paginas.map(({ id, url, avatar_url, titulo, descripcion }) => (
+            <RepoCard
+              id={id}
+              url={url}
+              avatar_url={avatar_url}
+              titulo={titulo}
+              descripcion={descripcion}
+            />
+          ))
+        }
+      </div>
+
+      <h2>Github Repository</h2>
+      <div class="container-repos">
+        {
+          repos.map(({ id, url, avatar_url, titulo, descripcion }) => (
+            <RepoCard
+              id={id}
+              url={url}
+              avatar_url={avatar_url}
+              titulo={titulo}
+              descripcion={descripcion}
+            />
+          ))
+        }
+      </div>
+
+      <h2>Github Orgs</h2>
+      <div class="container-repos">
+        {
+          orgs.map(({ id, url, avatar_url, titulo, descripcion }) => (
+            <RepoCard
+              id={id}
+              url={url}
+              avatar_url={avatar_url}
+              titulo={titulo}
+              descripcion={descripcion}
+            />
+          ))
+        }
+      </div>
+    </div>
+    <div class="github-info">
+      <!-- <div class="div-img-presentacion">
+        <img
+          class="img-presentacion"
+          src="/presentacion.gif"
+          alt="presentacion Profesorjand"
+        />
+      </div> -->
+      <GitHubStats />
+    </div>
+  </div>
+</Layout>
+<style>
+  h2 {
+    color: #fe428e;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    width: 100%;
+  }
+  .github-repository-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 35, 37);
+    border-radius: 5px;
+  }
+  .container-repos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+
+    padding: 1rem;
+  }
+  .img-presentacion {
+    max-width: 100%;
+    max-height: 100%;
+
+    display: block;
+    position: relative;
+    margin: auto;
+  }
+  .div-img-presentacion {
+    width: 100%;
+
+    margin: auto;
+  }
+
+  .github-info {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+</style>

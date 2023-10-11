@@ -1,0 +1,127 @@
+---
+const { id, url, avatar_url, titulo, descripcion } = Astro.props;
+console.log(avatar_url);
+---
+
+<div class="container repoLink" id={id} data-url={url}>
+  {
+    avatar_url && (
+      <div class="imgOrg">
+        <img src={avatar_url} alt={titulo} />
+      </div>
+    )
+  }
+  <div class="titulo">
+    <h3>{titulo}</h3>
+  </div>
+  <p class="descripcion">{descripcion}</p>
+  <!-- <div class="container-ego">
+    <p>stars: {stargazers_count}</p>
+    <p>watchers: {watchers_count}</p>
+    <p>forks: {forks_count}</p>
+  </div> -->
+  <!-- <div class="container-language">{language || 'Markdown'}</div> -->
+</div>
+
+<style>
+  .imgOrg {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 70px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+  }
+  .imgOrg img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+  .titulo h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    height: 2em;
+    white-space: nowrap;
+  }
+  .descripcion {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: pre-wrap;
+  }
+  p {
+    margin: 0;
+    font-weight: 500;
+  }
+  .titulo {
+    height: 20%;
+    width: 100%;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1 1 0;
+    background-color: #8d8d2c;
+    text-align: center;
+    border-radius: 5px;
+    gap: 15px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 270px;
+    min-height: 150px;
+    padding: 20px;
+    justify-content: flex-start;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .container:hover {
+    background-color: #d1d112;
+    cursor: pointer;
+  }
+
+  .container-link {
+    background-color: blueviolet;
+  }
+  .container-ego {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+  }
+  .container-language {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #c7c71d;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  .container:hover .container-language {
+    background-color: #f0f005;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+</style>
+
+<script>
+  const repos = document.querySelectorAll('.repoLink');
+  repos.forEach((repo) => {
+    repo.addEventListener('click', () => {
+      console.log(repo.getAttribute('data-url'));
+      window.open(repo.getAttribute('data-url'), '_blank');
+    });
+  });
+</script>

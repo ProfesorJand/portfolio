@@ -1,0 +1,26 @@
+---
+const githubStats =
+  'https://github-readme-stats.vercel.app/api?username=ProfesorJand&show_icons=true&theme=radical';
+---
+
+<div class="iframe-container">
+  <iframe src={githubStats} class="results"></iframe>
+</div>
+
+<style>
+  .iframe-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  iframe {
+    width: auto;
+    height: 100%;
+    border: 0;
+  }
+  iframe {
+    zoom: 2;
+    -moz-transform: scale(2);
+    -moz-transform-origin: 0 0;
+  }
+</style>
