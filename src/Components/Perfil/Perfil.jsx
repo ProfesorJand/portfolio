@@ -26,7 +26,7 @@ export default function Perfil({ lenguage }) {
       text3: 'entre otras tecnologías del sector. Creador pagina web',
       webPage: 'guiadeparche.com',
       text4: 'posicionada como',
-      number: '#1',
+      number: 'Top',
       text5: 'en',
       SEO: 'SEO',
       text6:
@@ -48,7 +48,7 @@ export default function Perfil({ lenguage }) {
       text3: 'among other technologies in the sector. Website creator',
       webPage: 'guiadeparche.com',
       text4: 'position',
-      number: '#1',
+      number: 'Top',
       text5: 'in',
       SEO: 'SEO',
       text6:
