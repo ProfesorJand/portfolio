@@ -50,6 +50,19 @@ export default function Contact({ lenguage }) {
   //   //axios.get("https://portfolio-backend.adaptable.app/").then(r=>console.log(r))
   // }
 
+  const blockEmail = {
+    es: {
+      emailSended: 'Correo enviado ✔️',
+      emailError: '❌ Correo no enviado ❌',
+      seconds: `Por favor esperar ${counterNum} segundos para enviar otro correo`,
+    },
+    en: {
+      emailSended: 'Email sended ✔️',
+      emailError: '❌ Email error ❌, if this continue contact me by profesorjand@gmail.com',
+      seconds: `Please Wait ${counterNum} seconds to send another Email`,
+    },
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -68,8 +81,9 @@ export default function Contact({ lenguage }) {
         (error) => {
           console.log(error.text);
         }
-      );
-    e.target.reset();
+      ).finally(() => {
+        e.target.reset();
+      });
   };
 
   const contact = {
@@ -91,16 +105,7 @@ export default function Contact({ lenguage }) {
     },
   };
 
-  const blockEmail = {
-    es: {
-      emailSended: 'Correo enviado ✔️',
-      seconds: `Por favor esperar ${counterNum} segundos para enviar otro correo`,
-    },
-    en: {
-      emailSended: 'Email sended ✔️',
-      seconds: `Please Wait ${counterNum} seconds to send another Email`,
-    },
-  };
+  
   return (
     <section id="contact">
       <div className="tituloH2" id="contact">
@@ -173,13 +178,13 @@ export default function Contact({ lenguage }) {
           </form>
         ) : success ? (
           <div className={Styles.divSended}>
-            <p>Email sended ✔️</p>
-            <p>Please Wait {counterNum} seconds to send another Email</p>
+            <p>{blockEmail[lenguage]['emailSended']}</p>
+            <p>{blockEmail[lenguage]['seconds']}</p>
           </div>
         ) : (
           <div className={Styles.divSended}>
-            <p>❌ Email error ❌</p>
-            <p>Please Wait {counterNum} seconds to send another Email</p>
+            <p>{blockEmail[lenguage]['emailError']}</p>
+            <p>{blockEmail[lenguage]['seconds']}</p>
           </div>
         )}
       </div>
