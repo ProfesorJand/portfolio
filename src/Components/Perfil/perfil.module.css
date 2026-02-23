@@ -77,13 +77,13 @@
 
 .containerCV_Img{
   position: relative;
+  transition: 1s;
 }
 
 .containerCV_Img:hover{
   fill: aqua;
   cursor: pointer;
   transform: scale(1.3);
-  transition: 1s;
 }
 
 .flag{

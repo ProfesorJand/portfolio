@@ -118,7 +118,7 @@ export default function Proyects({ lenguage }) {
                     value="Go Repository"
                     type="button"
                     onClick={() => {
-                      window.open(r.html_url, '_blank');
+                      window.open(r.github_url, '_blank');
                     }}
                   ></input>
                 </div>

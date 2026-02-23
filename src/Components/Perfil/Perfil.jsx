@@ -32,7 +32,7 @@ export default function Perfil({ lenguage }) {
       text6:
         '. Me destaco por pensamento creativo, resolución de problemas, trabajo en equipo, comunicación y autonomía.',
       text7: 'Descargar mi ',
-      CV: 'CV',
+      CV: 'CV 👇',
       lenguage: '(Español - Ingles)',
     },
     en: {
@@ -54,7 +54,7 @@ export default function Perfil({ lenguage }) {
       text6:
         '. I stand out for creative thinking, problem solving, teamwork, communication and autonomy.',
       text7: 'Download my ',
-      CV: 'CV',
+      CV: 'CV 👇',
       lenguage: '(Spanish - English)',
     },
   };
@@ -116,21 +116,21 @@ export default function Perfil({ lenguage }) {
             </p>
             <div className={Style.containerCV}>
               <div className={Style.containerCV_Img}>
-                <a href={pathPDFEspanol} download="Jorge Andrade PDF Español">
+                <a href={pathPDFEspanol} download="Jorge Andrade CV Español">
                   <img
                     src="https://img.icons8.com/fluency/48/null/worker-id-card.png"
                     alt="Curriculum ES"
                   />
                   <img
                     className={Style.flag}
-                    src="https://img.icons8.com/color/48/null/spain2-circular.png"
+                    src="https://img.icons8.com/?size=100&id=ly7tzANRt33n&format=png&color=000000"
                     alt="Bandera español"
                     width={'25px'}
                   />
                 </a>
               </div>
               <div className={Style.containerCV_Img}>
-                <a href={pathPDFEnglish} download="Jorge Andrade PDF English">
+                <a href={pathPDFEnglish} download="Jorge Andrade CV English">
                   <img
                     src="https://img.icons8.com/fluency/48/null/worker-id-card.png"
                     alt="Curriculum EN"

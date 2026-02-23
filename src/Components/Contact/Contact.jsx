@@ -86,7 +86,7 @@ export default function Contact({ lenguage }) {
       user_name: 'Full name',
       user_email: 'Email',
       user_subject: 'Subject',
-      user_message: 'Mensaje...',
+      user_message: 'Message...',
       submit: 'Submit',
     },
   };
