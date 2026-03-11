@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Style from './proyects.module.css';
 import { FaEye, FaStar } from 'react-icons/fa';
 import { BiGitRepoForked } from 'react-icons/bi';
@@ -15,6 +15,22 @@ export default function Proyects({ lenguage }) {
     es: 'Organizaciones - Github',
     en: 'Github - Organitations',
   };
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+      const container = containerRef.current;
+      if (container) {
+        const handleWheel = (e) => {
+          if (e.deltaY !== 0) {
+            e.preventDefault();
+            container.scrollLeft += e.deltaY;
+          }
+        };
+        // Passive false to allow preventDefault
+        container.addEventListener('wheel', handleWheel, { passive: false });
+        return () => container.removeEventListener('wheel', handleWheel);
+      }
+    }, []);
 
   return (
     <>
@@ -22,7 +38,7 @@ export default function Proyects({ lenguage }) {
         <div className="tituloH2">
           <h2>{githubProyects[lenguage]}</h2>
         </div>
-        <div className={Style.containerProyects}>
+        <div className={Style.containerProyects} ref={containerRef}>
           {repo &&
             repo.map((r) => {
               return (

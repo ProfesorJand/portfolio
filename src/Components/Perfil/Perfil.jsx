@@ -6,8 +6,8 @@ import SocialMedia from '../SocialMedia/SocialMedia.jsx';
 export default function Perfil({ lenguage }) {
   const name = 'Jorge';
   const lastName = 'Andrade';
-  const pdfEspanol = '/CV_Jorge_Andrade_Espanol.pdf';
-  const pdfEnglish = '/CV_Jorge_Andrade_English.pdf';
+  const pdfEspanol = '/Jorge_Andrade_CV_Español.pdf';
+  const pdfEnglish = '/Jorge_Andrade_CV_English.pdf';
   const pathPDFEspanol =
     window.location.origin + window.location.pathname + pdfEspanol;
   const pathPDFEnglish =
@@ -62,7 +62,7 @@ export default function Perfil({ lenguage }) {
   return (
     <section id="aboutMe">
       <div className="tituloH2" id="aboutMe">
-        <h2>{textAboutMe[lenguage]['aboutMe']}</h2>
+        <h1>{textAboutMe[lenguage]['aboutMe']}</h1>
       </div>
       <div className={Style.container}>
         <div className={Style.containerLeft}>

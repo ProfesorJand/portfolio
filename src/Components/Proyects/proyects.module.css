@@ -9,9 +9,15 @@
   background-color: #1e252f;
   /* border: 0.5rem solid black; */
   border-radius: 2rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
   animation: borderGrove 7s ease infinite;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.containerProyects::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .containerOrganitation{

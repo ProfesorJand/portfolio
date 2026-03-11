@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Styles from './navbar.module.css';
 
 export default function Navbar({ lenguage }) {
-  const [scrollTop, setScrollTop] = useState(0);
-
   const About = {
     es: 'Acerca de mí',
     en: 'About',
@@ -11,6 +9,10 @@ export default function Navbar({ lenguage }) {
   const Skills = {
     es: 'Habilidades',
     en: 'Skills',
+  };
+  const Certificates = {
+    es: 'Certificados',
+    en: 'Certificates',
   };
   const Proyects = {
     es: 'Proyectos',
@@ -35,27 +37,37 @@ export default function Navbar({ lenguage }) {
   // }
 
   useEffect(() => {
-    function watchScroll() {
-      window.addEventListener('scroll', highlightScroll);
-    }
-    watchScroll();
+    const wrapper = document.querySelector('.home-wrapper');
+    if (!wrapper) return;
+    
+    wrapper.addEventListener('scroll', highlightScroll);
+    // Initial call to set active class correctly
+    highlightScroll();
+
     return () => {
-      window.removeEventListener('scroll', highlightScroll);
+      wrapper.removeEventListener('scroll', highlightScroll);
     };
-  }, [scrollTop]);
+  }, []); // Run only once
 
   function highlightScroll() {
-    setScrollTop(window.scrollY);
+    const wrapper = document.querySelector('.home-wrapper');
+    if (!wrapper) return;
+    
     const sections = document.querySelectorAll('section');
     const navLi = document.querySelectorAll(`div .${Styles.topnav} a`);
     let current = '';
+    
     sections.forEach((section) => {
+      // OffsetTop is relative to the offsetParent. 
+      // It might be needed to check sectionTop depending on relative positioning.
       const sectionTop = section.offsetTop;
-      //const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - 30) {
+      
+      // We subtract a small offset to trigger the state change before hitting the exact pixel
+      if (wrapper.scrollTop >= sectionTop - 100) {
         current = section.getAttribute('id');
       }
     });
+
     navLi.forEach((a) => {
       a.classList.remove(Styles.active);
       if (a.classList.contains(current)) {
@@ -72,6 +84,9 @@ export default function Navbar({ lenguage }) {
         </a>
         <a className="skills" href="#skills">
           {Skills[lenguage]}
+        </a>
+        <a className="certificates" href="#certificates">
+          {Certificates[lenguage]}
         </a>
         <a className="proyects" href="#proyects">
           {Proyects[lenguage]}

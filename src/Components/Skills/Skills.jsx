@@ -61,6 +61,10 @@ export default function Skills({ lenguage }) {
         urlImage: 'https://img.icons8.com/fluency/48/null/node-js.png',
       },
       {
+        skillName: 'Express',
+        urlImage: 'https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000',
+      },
+      {
         skillName: 'Postgres',
         urlImage: 'https://img.icons8.com/color/48/null/postgreesql.png',
       },

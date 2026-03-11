@@ -1,0 +1,88 @@
+.containerCertificates {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: left;
+  width: 50%;
+  margin: 10px auto;
+  padding: 20px 20px;
+  background-color: #1e252f;
+  /* border: 0.5rem solid black; */
+  border-radius: 2rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  animation: borderGrove 7s ease infinite;
+  max-height: 250px;
+  height: 50vh;
+  gap: 15px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.containerCertificates::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 10px 10px;
+  padding: 20px 20px;
+  flex:1 0 50%;
+  background-color: #293545;
+  border: 0.2rem solid black;
+  border-radius: 2rem;
+  word-break: break-word;
+  transition: 350ms;
+  color: white;
+  white-space: break-spaces;
+  justify-content: space-between;
+  
+}
+
+@keyframes borderGrove {
+    0%   {background-color: #1e252f; box-shadow: 0px 0px 2px 2px #888888;}
+    50%  {background-color: #1e252f; box-shadow: 0px 0px 2px 2px aqua;}
+    100%   {background-color: #1e252f; box-shadow: 0px 0px 2px 2px #888888;}
+
+}
+
+.img_thumbnail{
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.certificateView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px auto;
+  padding: 20px 20px;
+  background-color: #1e252f36;
+  border-radius: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.imgHighlight{
+  display:flex;
+  width: 50%;
+  height: auto;
+
+}
+
+@media (max-width:1025px){
+  .containerCertificates{
+    width: 80%;
+  }
+}
